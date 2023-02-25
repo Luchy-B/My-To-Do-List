@@ -10,7 +10,7 @@ get.forEach(element => {
         get.splice(index, 1)
     }
 });
-count = get.length
+count = get.length;
 collection = [];
 collection = get
 
