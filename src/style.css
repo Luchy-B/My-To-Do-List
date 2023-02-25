@@ -1,3 +1,102 @@
 input::placeholder {
   font-style: italic;
+  position: relative;
+  left: 20px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  font-family: "poppins", sans-serif;
+}
+
+.container {
+  width: 36%;
+  box-shadow: 0 0 16px #d1d1d1;
+}
+
+h4 {
+  border-bottom: 2px solid #ededed;
+  padding: 20px;
+  margin: 0;
+}
+
+#clear-Completed {
+  padding: 20px 10px;
+  width: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#input-List {
+  border: none;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 2px solid #ededed;
+}
+
+#input-List:focus {
+  outline: none;
+}
+
+.wrapper {
+  border: none;
+  border-bottom: 2px solid #ededed;
+  display: flex;
+}
+
+.checkBox {
+  width: 18px;
+  margin-left: 20px;
+  margin-right: 16px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 80%;
+  color: #000;
+  padding: 20px 10px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.more {
+  width: 16px;
+}
+
+.stylingInput::placeholder {
+  color: black;
+  font-style: normal;
+}
+
+.input-Content {
+  display: flex;
+  flex-direction: column;
+  gap: 250px;
+}
+
+.edit-Btn div {
+  background-color: black;
+  padding: 2px;
+  border-radius: 50%;
+  width: 1px;
+}
+
+.editBtn1 {
+  margin-top: 2px;
+}
+
+.remove-Btn {
+  cursor: pointer;
+}
+
+.task-Container {
+  display: flex;
+  flex-direction: row;
 }

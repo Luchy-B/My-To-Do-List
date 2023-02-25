@@ -1,38 +1,22 @@
 import './style.css';
+import CreateList from './createList.js';
+import { collection, count } from './export.js';
 
-const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-const inputList = document.getElementById('input-List');
+const input = document.getElementById('input-List');
+const todo = document.getElementById('todo-Collections');
 
-const createItem = (item = {
-  task: inputList.value,
-  index: taskArray.length,
-  completed: false,
-}) => {
-  taskArray.push(item);
-  localStorage.setItem('tasks', JSON.stringify(taskArray));
-  window.location.reload();
-};
-
-inputList.value = '';
-inputList.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    createItem(inputList.value);
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && input.value !== '') {
+    new CreateList().create(input.value);
+    input.value = '';
   }
 });
 
-function displayItems() {
-  let tasks = '';
-  for (let i = 0; i < taskArray.length; i += 1) {
-    tasks += ` <div class="item" >
-    <div class="input-Content">
-    <div>
-        <input type="checkbox" class="complete" name="completed" />
-        <span disabled>${taskArray[i]}</span>
-    </div>
-       
-        </div>`;
-  }
-  document.querySelector('#todo-Collections').innerHTML = tasks;
-}
+const reload = () => {
+  const collected = JSON.parse(localStorage.getItem('text'));
+  collected.forEach((item) => {
+    new CreateList().create(item.text);
+  });
+};
 
-window.onload = displayItems();
+window.onload = reload;
