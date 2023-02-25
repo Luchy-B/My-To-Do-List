@@ -33,17 +33,6 @@ function actRemove() {
   });
 }
 
-function activateCancel() {
-  const cancelBtn = document.querySelectorAll('.cancel-Btn');
-  const editBtn = document.querySelectorAll('.edit-Btn');
-  cancelBtn.forEach((cb, i) => {
-    cb.addEventListener('click', () => {
-      editBtn[i].style.display = 'block';
-      window.location.reload();
-    });
-  });
-}
-
 function checkBox() {
   const checks = document.querySelectorAll('input[type=checkbox]');
   const inputs = document.querySelectorAll('.strike');
@@ -57,6 +46,19 @@ function checkBox() {
         inputs[i].style.textDecoration = 'none';
         inputs[i].style.color = 'black';
       }
+    });
+  });
+}
+
+function activateCancel() {
+  const cancelBtn = document.querySelectorAll('.cancel-Btn');
+  const editBtn = document.querySelectorAll('.edit-Btn');
+  const inputs = document.querySelector('.strike');
+  cancelBtn.forEach((cb, i) => {
+    cb.addEventListener('click', () => {
+      editBtn[i].style.display = 'block';
+      inputs[i].disabled = true;
+      window.location.reload();
     });
   });
 }
@@ -78,7 +80,7 @@ clearCompleted.addEventListener('click', () => {
 function activateEdit() {
   const editBtn = document.querySelectorAll('.edit-Btn');
   const editController = document.querySelectorAll('.edit-controller');
-  const inputs = document.querySelectorAll('.task-Container');
+  const inputs = document.querySelectorAll('.strike');
   editBtn.forEach((eb, i) => {
     eb.addEventListener('click', () => {
       editController[i].style.display = 'flex';
@@ -88,34 +90,19 @@ function activateEdit() {
   });
 }
 
-// Export the function below
-// function updateComplet(index, completed) {
-//   const taskArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
-//   const item = taskArray[index];
-//   if (typeof item === 'string') {
-//     taskArray[index] = { task: item, index, completed };
-//   } else {
-//     item.completed = completed;
-//   }
-
-//   localStorage.setItem('items', JSON.stringify(taskArray));
-// }
-
 function displayItems() {
   let tasks = '';
   for (let i = 0; i < taskArray.length; i += 1) {
     tasks += ` <div class="item" >
     <div class = 'task-Container'>
         <input type="checkbox" class="complete stylingInput" name="completed" />
-        <input class="stylingInput strike" type="text" placeholder="${taskArray[i]}"/>
+        <input disabled class="stylingInput strike" type="text" placeholder="${taskArray[i]}"/>
         <div class='edit-Btn'>
           <div class='editBtn1'></div>
           <div class='editBtn1'></div>
           <div class='editBtn1'></div>
         </div>
     </div>
-   
-
     <span class="edit-controller">
       <span class="remove-Btn">Delete</span>
       <span class="cancel-Btn">x</span>
@@ -126,7 +113,6 @@ function displayItems() {
   actRemove();
   checkBox();
   activateCancel();
-  // updateComplet();
   activateEdit();
 }
 
