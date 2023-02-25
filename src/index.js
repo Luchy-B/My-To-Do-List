@@ -1,6 +1,6 @@
 import './style.css';
 import CreateList from './createList.js';
-import { collection } from './exports.js';
+import { collection } from './export.js';
 
 const input = document.getElementById('input-List');
 

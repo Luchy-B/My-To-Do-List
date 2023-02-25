@@ -1,4 +1,4 @@
-import { count } from "./exports.js";
+import { count, collection } from "./export.js";
 const todo = document.getElementById('todo-Collections');
 const deleteFunction = (wrapper, index) => {
 todo.removeChild(wrapper)
@@ -10,6 +10,10 @@ get.forEach(element => {
         get.splice(index, 1)
     }
 });
+count = get.length
+collection = [];
+collection = get
+
 
 get.forEach((item, index) => {
     item.index = index
