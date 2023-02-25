@@ -1,17 +1,3 @@
-# Project-To-Do-List
-
-# To-Do-List: project
-
-<a name="readme-top"></a>
-
-<div align="center">
-  <br/>
-
-  <h3><b>To-Do-List</b></h3>
-
-</div>
-
-
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -22,10 +8,8 @@
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -38,10 +22,11 @@
 
 **To-Do-List** is a project that keeps track of activities. It experiments how to work with objects in javascript.
 
-## 🛠 Built With html and css<a name="built-with"></a>
+## 🛠 Built With<a name="built-with"></a>
 HTML
 CSS
 Javascript
+Webpack
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -71,13 +56,14 @@ Fullstack developer: includes both front end and Backend developer.
 
 ### Key Features <a name="key-features"></a>
 
-- **[html]**
+- **Adding items.**
+- **Removing items.**
+- **Mark selected item as complete.**
+
 - **[Linters]**
 - **[Node]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -93,18 +79,18 @@ Fullstack developer: includes both front end and Backend developer.
 To get a local copy up and running, follow these steps.
 https://github.com/Luchy-B/My-To-Do-List
 
+### Setup
+
+Clone this repository to your desired folder:
+
+https://github.com/Luchy-B/My-To-Do-List
+
 ### Prerequisites
 
 In order to run this project you need:
 
 - install npm, node
 - Install code editor
-
-### Setup
-
-Clone this repository to your desired folder:
-
-https://github.com/Luchy-B/My-To-Do-List
 
 ### Usage
 
@@ -132,9 +118,9 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **About Me page**
-- [ ] **Contact Form**
-- [ ] **Project links**
+- [ ] **Add CSS Styling**
+- [ ] **Add interactivity**
+- [ ] **Add page navigation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
