@@ -1,6 +1,8 @@
 let todoCollection = document.getElementById('todo-Collections')
 import { collection } from './exports.js'
-import menu from './menu.svg'
+import menu from './delete.svg'
+import deleteFunction from './delete.js'
+
 let count = 0
 class CreateList {
     create(input, isChecked) {
@@ -16,7 +18,7 @@ class CreateList {
       const wrapper = document.createElement('div');
       const checkBox = document.createElement('input');
       const item = document.createElement('input');
-      const deleteButton = document.createElement('img');
+      const more = document.createElement('img');
   
       checkBox.checked = this.isChecked;
   
@@ -26,11 +28,13 @@ class CreateList {
   
       item.type = 'text';
       checkBox.type = 'checkbox';
-    //   deleteButton.src = menu;
+      more.src = menu;
+
+      more.addEventListener('click', () => deleteFunction(wrapper, collective.index))
   
       wrapper.classList.add('wrapper');
       item.classList.add('item');
-      deleteButton.classList.add('more');
+      more.classList.add('more');
       checkBox.classList.add('checkBox');
   
       item.disabled = true;
@@ -39,7 +43,7 @@ class CreateList {
   
       wrapper.appendChild(checkBox);
       wrapper.appendChild(item);
-      wrapper.appendChild(deleteButton);
+      wrapper.appendChild(more);
       todoCollection.appendChild(wrapper);
       collection.push(collective);
   
