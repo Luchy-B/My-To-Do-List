@@ -1,8 +1,9 @@
 import './style.css';
 import CreateList from './createList.js';
-import { collection } from './export.js';
+import { collection, count } from './export.js';
 
 const input = document.getElementById('input-List');
+const todo = document.getElementById('todo-Collections');
 
 input.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && input.value !== '') {
@@ -14,11 +15,28 @@ input.addEventListener('keydown', (event) => {
 const reload = () => {
   const collected = JSON.parse(localStorage.getItem('text'));
   collected.forEach((item) => {
-    new CreateList().create(item.text, item.isChecked);
+    new CreateList().create(item.text);
   });
 };
 
 window.onload = reload;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 // const inputList = document.getElementById('input-List');

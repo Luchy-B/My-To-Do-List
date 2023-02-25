@@ -12,7 +12,6 @@ class CreateList {
 
     collective.text = this.input;
     collective.index = count;
-    collective.isChecked = false;
 
     count += 1;
 
@@ -41,20 +40,6 @@ class CreateList {
     item.disabled = true;
 
     item.value = collective.text;
-
-    checkBox.addEventListener('change', () => {
-      if (checkBox.checked) {
-        item.style.textDecoration = 'line-through';
-        this.isChecked = true;
-        collection[collective.index].isChecked = true;
-        localStorage.setItem('text', JSON.stringify(collection));
-      } else {
-        item.style.textDecoration = 'none';
-        this.isChecked = false;
-        collection[collective.index].isChecked = false;
-        localStorage.setItem('text', JSON.stringify(collection));
-      }
-    });
 
     wrapper.appendChild(checkBox);
     wrapper.appendChild(item);

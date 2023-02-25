@@ -10,10 +10,10 @@ const deleteFunction = (wrapper, index) => {
     if (element.index === index) {
       get.splice(index, 1);
     }
-  });
-  count = get.length;
-  collection = [];
-  collection = get;
+});
+count = get.length;
+collection = [];
+collection = get
 
   get.forEach((item, index) => {
     item.index = index;
