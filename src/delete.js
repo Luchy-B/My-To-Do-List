@@ -1,26 +1,25 @@
-import { count, collection } from "./export.js";
+import { count, collection } from './export.js';
+
 const todo = document.getElementById('todo-Collections');
 const deleteFunction = (wrapper, index) => {
-todo.removeChild(wrapper)
+  todo.removeChild(wrapper);
 
-let get = JSON.parse(localStorage.getItem('text'))
+  const get = JSON.parse(localStorage.getItem('text'));
 
-get.forEach(element => {
-    if(element.index === index) {
-        get.splice(index, 1)
+  get.forEach((element) => {
+    if (element.index === index) {
+      get.splice(index, 1);
     }
-});
-count = get.length
-collection = [];
-collection = get
+  });
+  count = get.length;
+  collection = [];
+  collection = get;
 
+  get.forEach((item, index) => {
+    item.index = index;
+  });
 
-get.forEach((item, index) => {
-    item.index = index
-})
+  localStorage.setItem('text', JSON.stringify(get));
+};
 
-localStorage.setItem('text', JSON.stringify(get))
-
-}
-
-export default deleteFunction
+export default deleteFunction;

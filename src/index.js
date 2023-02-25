@@ -5,20 +5,20 @@ import { collection } from './export.js';
 const input = document.getElementById('input-List');
 
 input.addEventListener('keydown', (event) => {
-  if(event.key === 'Enter' && input.value !== '') {
-    new CreateList().create(input.value)
-    input.value = ''
+  if (event.key === 'Enter' && input.value !== '') {
+    new CreateList().create(input.value);
+    input.value = '';
   }
-})
+});
 
-const reload = () => { 
-  let collected = JSON.parse(localStorage.getItem('text'))
-  collected.forEach(item => {
-      new CreateList().create(item.text)
- })
-}
+const reload = () => {
+  const collected = JSON.parse(localStorage.getItem('text'));
+  collected.forEach((item) => {
+    new CreateList().create(item.text);
+  });
+};
 
-window.onload = reload
+window.onload = reload;
 
 // const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 // const inputList = document.getElementById('input-List');
