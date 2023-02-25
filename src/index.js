@@ -11,12 +11,21 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
+<<<<<<< HEAD
 const reload = () => {
   const collected = JSON.parse(localStorage.getItem('text'));
   collected.forEach((item) => {
     new CreateList().create(item.text);
   });
 };
+=======
+const reload = () => { 
+  let collected = JSON.parse(localStorage.getItem('text'))
+  collected.forEach(item => {
+      new CreateList().create(item.text, item.isChecked)
+ })
+}
+>>>>>>> a977d83d5e2899d075143bec49d5542ee3331bd8
 
 window.onload = reload;
 
