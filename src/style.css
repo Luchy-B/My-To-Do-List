@@ -1,3 +1,49 @@
 input::placeholder {
   font-style: italic;
 }
+
+.stylingInput {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: b;
+  margin-top: 10px;
+}
+
+.stylingInput::placeholder {
+  color: black;
+  font-style: normal;
+}
+
+.input-Content {
+  display: flex;
+  flex-direction: column;
+  gap: 250px;
+}
+
+.edit-Btn div {
+  background-color: black;
+  padding: 2px;
+  border-radius: 50%;
+  width: 1px;
+}
+
+.editBtn1 {
+  margin-top: 2px;
+}
+
+.remove-Btn {
+  cursor: pointer;
+}
+
+.task-Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
