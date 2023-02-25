@@ -1,5 +1,7 @@
 input::placeholder {
   font-style: italic;
+  position: relative;
+  left: 20px;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
 
 h4 {
   border-bottom: 2px solid #EDEDED;
-  padding: 20px 10px;
+  padding: 20px;
   margin: 0;
 }
 
@@ -49,7 +51,7 @@ h4 {
 
 .checkBox {
   width: 18px;
-  margin-left: 12px;
+  margin-left: 20px;
   margin-right: 16px;
 }
 
@@ -59,6 +61,10 @@ h4 {
   color: #000;
   padding: 20px 10px;
   border: none;
+}
+
+.more {
+  width: 16px;
 }
 
 .stylingInput::placeholder {
