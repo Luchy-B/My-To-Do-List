@@ -25,8 +25,11 @@ function displayItems() {
   for (let i = 0; i < taskArray.length; i += 1) {
     tasks += ` <div class="item" >
     <div class="input-Content">
+    <div>
         <input type="checkbox" class="complete" name="completed" />
         <span disabled>${taskArray[i]}</span>
+    </div>
+       
         </div>`;
   }
   document.querySelector('#todo-Collections').innerHTML = tasks;
