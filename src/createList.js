@@ -43,6 +43,7 @@ class CreateList {
       todoCollection.appendChild(wrapper);
       collection.push(collective);
   
+      localStorage.setItem('text', JSON.stringify(collection))
     }
   }
   
