@@ -14,7 +14,7 @@ input.addEventListener('keydown', (event) => {
 const reload = () => { 
   let collected = JSON.parse(localStorage.getItem('text'))
   collected.forEach(item => {
-      new CreateList().create(item.text)
+      new CreateList().create(item.text, item.isChecked)
  })
 }
 
