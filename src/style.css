@@ -2,13 +2,63 @@ input::placeholder {
   font-style: italic;
 }
 
-.stylingInput {
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: groove;
-  background-color: b;
-  margin-top: 10px;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  font-family: "poppins";
+}
+
+.container {
+  width: 36%;
+  box-shadow: 0 0 16px #d1d1d1;
+}
+
+h4 {
+  border-bottom: 2px solid #EDEDED;
+  padding: 20px 10px;
+  margin: 0;
+}
+
+#clear-Completed {
+  padding: 20px 10px;
+  width: 100%;
+  border: none;
+  background-color: rgba(0,0,0,0);
+}
+
+#input-List {
+  border: none;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  border-bottom: 2px solid #EDEDED;
+}
+
+#input-List:focus {
+  outline: none;
+}
+
+.wrapper {
+  border: none;
+  border-bottom: 2px solid #EDEDED;
+  display: flex;
+}
+
+.checkBox {
+  width: 18px;
+  margin-left: 12px;
+  margin-right: 16px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 80%;
+  color: #000;
+  padding: 20px 10px;
+  border: none;
 }
 
 .stylingInput::placeholder {
