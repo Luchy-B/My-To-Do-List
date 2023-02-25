@@ -17,7 +17,6 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-
 # 📖 [To-Do-List] <a name="about-project"></a>
 
 **To-Do-List** is a project that keeps track of activities. It experiments how to work with objects in javascript.
@@ -53,7 +52,6 @@ Fullstack developer: includes both front end and Backend developer.
   </ul>
 </details>
 
-
 ### Key Features <a name="key-features"></a>
 
 - **Adding items.**
@@ -67,11 +65,9 @@ Fullstack developer: includes both front end and Backend developer.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-
 - [Live Demo Link](Coming soon) 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -104,7 +100,6 @@ To run tests, run the following command:
 
   - Open a Live Serve on your Code Editor to view this project.
 
-
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Author1**
@@ -123,7 +118,6 @@ To run tests, run the following command:
 - [ ] **Add page navigation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -157,4 +151,3 @@ This project is [MIT](./LICENSE.md) licensed.
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
