@@ -1,14 +1,3 @@
-h1 {
-  color: orange;
-}
-
 input::placeholder {
   font-style: italic;
 }
-
-hr {
-  color: rgb(222, 221, 221);
-  margin-right: 90%;
-  
-}
-
