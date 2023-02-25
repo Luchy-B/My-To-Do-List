@@ -1,14 +1,14 @@
 let todoCollection = document.getElementById('todo-Collections')
+import { collection } from './exports.js'
 import menu from './menu.svg'
 let count = 0
-let collection = []
 class CreateList {
     create(input, isChecked) {
       this.input = input;
       this.isChecked = isChecked;
-      const collective = { chars: '', isChecked, index: 0 };
+      const collective = { text: '', isChecked, index: 0 };
   
-      collective.chars = this.input;
+      collective.text = this.input;
       collective.index = count;
   
       count += 1;
@@ -35,7 +35,7 @@ class CreateList {
   
       item.disabled = true;
   
-      item.value = collective.chars;
+      item.value = collective.text;
   
       wrapper.appendChild(checkBox);
       wrapper.appendChild(item);

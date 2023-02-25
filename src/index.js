@@ -1,5 +1,6 @@
 import './style.css';
 import CreateList from './createList.js';
+import { collection } from './exports.js';
 
 const input = document.getElementById('input-List');
 
@@ -10,6 +11,14 @@ input.addEventListener('keydown', (event) => {
   }
 })
 
+const reload = () => { 
+  let collected = JSON.parse(localStorage.getItem('text'))
+  collected.forEach(item => {
+      new CreateList().create(item.text)
+ })
+}
+
+window.onload = reload
 
 // const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 // const inputList = document.getElementById('input-List');
