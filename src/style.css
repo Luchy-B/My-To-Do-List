@@ -7,7 +7,7 @@ input::placeholder {
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
-  background-color: white;
+  background-color: b;
   margin-top: 10px;
 }
 

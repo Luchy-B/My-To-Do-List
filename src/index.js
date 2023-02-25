@@ -33,6 +33,17 @@ function actRemove() {
   });
 }
 
+function activateCancel() {
+  const cancelBtn = document.querySelectorAll('.cancel-Btn');
+  const editBtn = document.querySelectorAll('.edit-Btn');
+  cancelBtn.forEach((cb, i) => {
+    cb.addEventListener('click', () => {
+      editBtn[i].style.display = 'block';
+      window.location.reload();
+    });
+  });
+}
+
 function checkBox() {
   const checks = document.querySelectorAll('input[type=checkbox]');
   const inputs = document.querySelectorAll('.strike');
@@ -41,6 +52,7 @@ function checkBox() {
       if (checks[i].checked) {
         inputs[i].style.textDecoration = 'line-through';
         inputs[i].style.color = 'grey';
+        inputs[i].style.backgroundColor = 'beige';
       } else {
         inputs[i].style.textDecoration = 'none';
         inputs[i].style.color = 'black';
@@ -48,6 +60,46 @@ function checkBox() {
     });
   });
 }
+
+const clearCompleted = document.querySelector('#clear-Completed');
+clearCompleted.addEventListener('click', () => {
+  const checks = document.querySelectorAll('input[type=checkbox]');
+  const indexesToDelete = [];
+  checks.forEach((checkbox, i) => {
+    if (checkbox.checked) {
+      indexesToDelete.push(i);
+    }
+  });
+  const filteredItemsArray = taskArray.filter((item, i) => !indexesToDelete.includes(i));
+  localStorage.setItem('items', JSON.stringify(filteredItemsArray));
+  window.location.reload();
+});
+
+function activateEdit() {
+  const editBtn = document.querySelectorAll('.edit-Btn');
+  const editController = document.querySelectorAll('.edit-controller');
+  const inputs = document.querySelectorAll('.task-Container');
+  editBtn.forEach((eb, i) => {
+    eb.addEventListener('click', () => {
+      editController[i].style.display = 'flex';
+      editBtn[i].style.display = 'none';
+      inputs[i].disabled = false;
+    });
+  });
+}
+
+// Export the function below
+// function updateComplet(index, completed) {
+//   const taskArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+//   const item = taskArray[index];
+//   if (typeof item === 'string') {
+//     taskArray[index] = { task: item, index, completed };
+//   } else {
+//     item.completed = completed;
+//   }
+
+//   localStorage.setItem('items', JSON.stringify(taskArray));
+// }
 
 function displayItems() {
   let tasks = '';
@@ -66,16 +118,21 @@ function displayItems() {
 
     <span class="edit-controller">
       <span class="remove-Btn">Delete</span>
+      <span class="cancel-Btn">x</span>
     </span>
   </div>`;
   }
   document.querySelector('#todo-Collections').innerHTML = tasks;
   actRemove();
   checkBox();
+  activateCancel();
+  // updateComplet();
+  activateEdit();
 }
 
 document.querySelector('#add-Btn').addEventListener('click', () => {
   createItem(inputList.value);
+  localStorage.setItem('tasks', JSON.stringify(taskArray));
 });
 
 window.onload = displayItems();
