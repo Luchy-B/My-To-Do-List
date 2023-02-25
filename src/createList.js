@@ -2,7 +2,6 @@ let todoCollection = document.getElementById('todo-Collections')
 import { collection } from './exports.js'
 import menu from './delete.svg'
 import deleteFunction from './delete.js'
-
 let count = 0
 class CreateList {
     create(input, isChecked) {
