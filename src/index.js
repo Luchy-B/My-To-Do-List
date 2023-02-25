@@ -17,4 +17,19 @@ const reload = () => {
   });
 };
 
+const taskArray = JSON.parse(localStorage.getItem('text'));
+const clearCompleted = document.querySelector('#clear-Completed');
+clearCompleted.addEventListener('click', () => {
+  const checks = document.querySelectorAll('input[type=checkbox]');
+  const indexesToDelete = [];
+  checks.forEach((checkbox, i) => {
+    if (checkbox.checked) {
+      indexesToDelete.push(i);
+    }
+  });
+  const filteredItemsArray = taskArray.filter((i) => !indexesToDelete.includes(i));
+  localStorage.setItem('items', JSON.stringify(filteredItemsArray));
+  window.location.reload();
+});
+
 window.onload = reload;
