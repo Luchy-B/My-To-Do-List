@@ -5,12 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "start": "webpack serve --open"
-=======
-    "start": "webpack serve --open 'http://localhost:8080'",
-    "build": "webpack --mode production"
->>>>>>> a977d83d5e2899d075143bec49d5542ee3331bd8
   },
   "repository": {
     "type": "git",
