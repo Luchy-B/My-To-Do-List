@@ -21,11 +21,28 @@ class CreateList {
     const more = document.createElement('img');
 
     checkBox.checked = this.isChecked;
+    collective.isChecked = checkBox.checked;
 
     if (checkBox.checked) {
       item.style.textDecoration = 'line-through';
     }
 
+    checkBox.addEventListener("change", () => {
+      if (checkBox.checked) {
+        item.style.textDecoration = "line-through";
+        collective.isChecked = true;
+        let get = JSON.parse(localStorage.getItem('text'));
+        get[collective.index].isChecked = true;
+        localStorage.setItem('text', JSON.stringify(get))
+      } else {
+        item.style.textDecoration = "none";
+        collective.isChecked = false;
+        let get = JSON.parse(localStorage.getItem('text'));
+        get[collective.index].isChecked = false;
+        localStorage.setItem('text', JSON.stringify(get))
+      }
+    });
+    
     item.type = 'text';
     checkBox.type = 'checkbox';
     more.src = menu;

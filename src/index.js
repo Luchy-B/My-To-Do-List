@@ -1,7 +1,10 @@
 import './style.css';
 import CreateList from './createList.js';
+import { collection, count } from "./export.js";
 
 const input = document.getElementById('input-List');
+let complete = document.getElementById("clearCompleted");
+let todo = document.getElementById('todo-Collections');
 
 input.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' && input.value !== '') {
@@ -10,26 +13,25 @@ input.addEventListener('keydown', (event) => {
   }
 });
 
+complete.addEventListener("click", () => {
+  todo.innerHTML = ''
+  let get = JSON.parse(localStorage.getItem('text'));
+  collection = [];
+  let filtered = get.filter(x=> x.isChecked !== true)
+  count = 0;
+  if(filtered.length === 0) {
+    localStorage.clear()
+  }
+  filtered.forEach((item) => {
+    new CreateList().create(item.text, item.isChecked);
+  });
+});
+
 const reload = () => {
   const collected = JSON.parse(localStorage.getItem('text'));
   collected.forEach((item) => {
     new CreateList().create(item.text);
   });
 };
-
-const taskArray = JSON.parse(localStorage.getItem('text'));
-const clearCompleted = document.querySelector('#clear-Completed');
-clearCompleted.addEventListener('click', () => {
-  const checks = document.querySelectorAll('input[type=checkbox]');
-  const indexesToDelete = [];
-  checks.forEach((checkbox, i) => {
-    if (checkbox.checked) {
-      indexesToDelete.push(i);
-    }
-  });
-  const filteredItemsArray = taskArray.filter((i) => !indexesToDelete.includes(i));
-  localStorage.setItem('items', JSON.stringify(filteredItemsArray));
-  window.location.reload();
-});
 
 window.onload = reload;
