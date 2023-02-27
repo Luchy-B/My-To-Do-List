@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
   entry: { index: path.resolve(__dirname, 'src', 'index.js') },
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -18,6 +18,11 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+
     ],
   },
   plugins: [

@@ -1,38 +1,76 @@
-import './style.css';
+// import './style.css';
+// import CreateList from './createList.js';
+// import { collection, count } from "./export.js";
 
-const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-const inputList = document.getElementById('input-List');
+// const input = document.getElementById('input-List');
+// const complete = document.getElementById('clear-Completed');
+// const todo = document.getElementById('todo-Collections');
 
-const createItem = (item = {
-  task: inputList.value,
-  index: taskArray.length,
-  completed: false,
-}) => {
-  taskArray.push(item);
-  localStorage.setItem('tasks', JSON.stringify(taskArray));
-  window.location.reload();
-};
+// input.addEventListener('keydown', (event) => {
+//   if (event.key === 'Enter' && input.value !== '') {
+//     new CreateList().create(input.value);
+//     input.value = '';
+//   }
+// });
 
-inputList.value = '';
-inputList.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    createItem(inputList.value);
+// complete.addEventListener('click', () => {
+//   todo.innerHTML = '';
+//   const get = JSON.parse(localStorage.getItem('text'));
+//   collection = []
+//   const filtered = get.filter((x) => x.isChecked !== true);
+//   count = 0;
+//   if (filtered.length === 0) {
+//     localStorage.clear();
+//   }
+//   filtered.forEach((item) => {
+//     new CreateList().create(item.text, item.isChecked);
+//   });
+// });
+
+// const reload = () => {
+//   const collected = JSON.parse(localStorage.getItem('text'));
+//   collected.forEach((item) => {
+//     new CreateList().create(item.text);
+//   });
+// };
+
+// window.onload = reload;
+
+
+import "./style.css";
+import CreateList from "./createList.js";
+import { collection, count } from "./export.js";
+
+const input = document.getElementById("input-List");
+let complete = document.getElementById("clearCompleted");
+let todo = document.getElementById('todo-Collections')
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && input.value !== "") {
+    new CreateList().create(input.value);
+    input.value = "";
   }
 });
 
-function displayItems() {
-  let tasks = '';
-  for (let i = 0; i < taskArray.length; i += 1) {
-    tasks += ` <div class="item" >
-    <div class="input-Content">
-    <div>
-        <input type="checkbox" class="complete" name="completed" />
-        <span disabled>${taskArray[i]}</span>
-    </div>
-       
-        </div>`;
+complete.addEventListener('click', () => {
+  todo.innerHTML = '';
+  let get = JSON.parse(localStorage.getItem('text'));
+  collection = []
+  let filtered = get.filter(x=> x.isChecked !== true)
+  count = 0;
+  if(filtered.length === 0) {
+    localStorage.clear()
   }
-  document.querySelector('#todo-Collections').innerHTML = tasks;
-}
+  filtered.forEach((item) => {
+    new CreateList().create(item.text, item.isChecked);
+  });
+});
 
-window.onload = displayItems();
+
+const reload = () => {
+  const collected = JSON.parse(localStorage.getItem("text"));
+  collected.forEach((item) => {
+    new CreateList().create(item.text, item.isChecked);
+  });
+};
+
+window.onload = reload;
