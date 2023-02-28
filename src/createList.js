@@ -8,7 +8,7 @@ class CreateList {
   create(input, isChecked) {
     this.input = input;
     this.isChecked = isChecked;
-    const collective = { text: '', isChecked, index: 0 };
+    const collective = { text: '', isChecked, index: 1 };
 
     collective.text = this.input;
     collective.index = count;

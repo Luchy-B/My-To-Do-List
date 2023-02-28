@@ -1,5 +1,3 @@
-import { count, collection } from './export.js';
-
 const todo = document.getElementById('todo-Collections');
 const deleteFunction = (wrapper, index) => {
   todo.removeChild(wrapper);
@@ -8,14 +6,12 @@ const deleteFunction = (wrapper, index) => {
 
   get.forEach((element) => {
     if (element.index === index) {
-      get.splice(index, count);
-      collection.push(get);
+      get.splice(index, 1);
     }
   });
 
   get.forEach((item, index) => {
     item.index = index;
-    count = get.length;
   });
 
   localStorage.setItem('text', JSON.stringify(get));
