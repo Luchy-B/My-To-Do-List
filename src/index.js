@@ -1,38 +1,37 @@
 import './style.css';
+import CreateList from './createList.js';
+import { collection, count } from './export.js';
 
-const taskArray = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-const inputList = document.getElementById('input-List');
-
-const createItem = (item = {
-  task: inputList.value,
-  index: taskArray.length,
-  completed: false,
-}) => {
-  taskArray.push(item);
-  localStorage.setItem('tasks', JSON.stringify(taskArray));
-  window.location.reload();
-};
-
-inputList.value = '';
-inputList.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    createItem(inputList.value);
+const input = document.getElementById('input-List');
+const complete = document.getElementById('clearCompleted');
+const todo = document.getElementById('todo-Collections');
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && input.value !== '') {
+    new CreateList().create(input.value);
+    input.value = '';
   }
 });
 
-function displayItems() {
-  let tasks = '';
-  for (let i = 0; i < taskArray.length; i += 1) {
-    tasks += ` <div class="item" >
-    <div class="input-Content">
-    <div>
-        <input type="checkbox" class="complete" name="completed" />
-        <span disabled>${taskArray[i]}</span>
-    </div>
-       
-        </div>`;
+complete.addEventListener('click', () => {
+  todo.innerHTML = '';
+  const get = JSON.parse(localStorage.getItem('text'));
+  collection = [];
+  const filtered = get.filter((x) => x.isChecked !== true);
+  count = 0;
+  if (filtered.length === count) {
+    collection.push(count);
+    localStorage.clear();
   }
-  document.querySelector('#todo-Collections').innerHTML = tasks;
-}
+  filtered.forEach((item) => {
+    new CreateList().create(item.text, item.isChecked);
+  });
+});
 
-window.onload = displayItems();
+const reload = () => {
+  const collected = JSON.parse(localStorage.getItem('text'));
+  collected.forEach((item) => {
+    new CreateList().create(item.text, item.isChecked);
+  });
+};
+
+window.onload = reload;
