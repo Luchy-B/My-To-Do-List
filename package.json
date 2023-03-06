@@ -1,5 +1,5 @@
 {
-  "name": "my-to-do-list",
+  "name": "Js-Best-Practice",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luchy-B/My-To-Do-List.git"
+    "url": "git+https://github.com/Luchy-B/Js-Best-Practice.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Luchy-B/My-To-Do-List/issues"
+    "url": "https://github.com/Luchy-B/Js-Best-Practice/issues"
   },
-  "homepage": "https://github.com/Luchy-B/My-To-Do-List#readme",
+  "homepage": "https://github.com/Luchy-B/Js-Best-Practice#readme",
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
