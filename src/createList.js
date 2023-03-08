@@ -1,4 +1,5 @@
-import menu from './delete.svg';
+import menu from './menu.svg';
+import Delete from './delete.svg';
 import deleteFunction from './delete.js';
 import { count, collection } from './export.js';
 
@@ -19,6 +20,7 @@ class CreateList {
     const checkBox = document.createElement('input');
     const item = document.createElement('input');
     const more = document.createElement('img');
+    const menuTog = document.createElement('img');
 
     checkBox.checked = this.isChecked;
     collective.isChecked = checkBox.checked;
@@ -45,22 +47,34 @@ class CreateList {
 
     item.type = 'text';
     checkBox.type = 'checkbox';
-    more.src = menu;
+    menuTog.src = menu;
+    more.src = Delete;
 
     more.addEventListener('click', () => deleteFunction(wrapper, collective.index));
 
     wrapper.classList.add('wrapper');
     item.classList.add('item');
     more.classList.add('more');
+    menuTog.classList.add('edit');
+    more.style.display = 'none';
     checkBox.classList.add('checkBox');
 
     item.disabled = true;
 
     item.value = collective.text;
 
+    menuTog.addEventListener('click', () => {
+      item.disabled = false;
+      more.style.display = 'block';
+      menuTog.style.display = 'none';
+      more.src = Delete;
+      more.classList.add('more');
+    });
+
     wrapper.appendChild(checkBox);
     wrapper.appendChild(item);
     wrapper.appendChild(more);
+    wrapper.appendChild(menuTog);
     todoCollection.appendChild(wrapper);
     collection.push(collective);
 

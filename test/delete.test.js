@@ -1,4 +1,4 @@
-import deleteFunction from '../__mocks__/del.js';
+import deleteFunction from '../__mock__/del.js';
 
 describe('Checks that a list is deleted', () => {
   const arr = [
