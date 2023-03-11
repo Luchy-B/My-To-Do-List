@@ -63,6 +63,8 @@ Fullstack developer: includes both front end and Backend developer.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Live Demo: (https://luchy-b.github.io/My-To-Do-List/dist/)
+
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
